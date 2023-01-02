@@ -1,64 +1,54 @@
-import React, { useState } from 'react';
 
-function Form() {
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [comment, setComment] = useState('');
+import React, { useState } from 'react';
+//import { useState } from 'react';
+
+export default function Form() {
+  const [data, setData] = useState([]);
+  const [id, setId] = useState(1);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Save the form data to local storage
-    localStorage.setItem('name', name);
-    localStorage.setItem('description', description);
-    localStorage.setItem('comment', comment);
+    // Add the new data to the existing data array
+    setData([...data, {id, name: e.target.name.value, email: e.target.email.value }]);
+
+    // Save the data array to local storage
+    localStorage.setItem('data', JSON.stringify(data));
 
     // Clear the form
-    setName('');
-    setDescription('');
-    setComment('');
+    e.target.name.value = '';
+    e.target.email.value = '';
+
+    //iterate id every time data is saved
+    setId(id + 1);
+
   };
 
-  const handleClear = () => {
-    // Clear the form when pressing the clear button
-    setName('');
-    setDescription('');
-    setComment('');
-  };
+  //console.log(data);
+  console.log("foreach Javascrip objekti");
+  console.log(data);
 
   return (
+    <div>
     <form onSubmit={handleSubmit}>
       <label>
         Name:
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        <input type="text" name="name" />
       </label>
       <br />
       <label>
-        Description:
-        <input
-          type="text"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+        Email:
+        <input type="email" name="email" />
       </label>
       <br />
-      <label>
-        Comment:
-        <input
-          type="text"
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-        />
-      </label>
-      <br />
-      <button type="submit">Add</button>
-      <button onClick={handleClear}>Clear</button>
+      <button type="submit">Save</button>
     </form>
+
+  <ul>
+    {data.map((item) => <li key={item.id}> {item.name} {item.email}</li>)}
+  </ul>
+  </div>
+
   );
 }
-
-export default Form;

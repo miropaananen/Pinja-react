@@ -1,0 +1,16 @@
+
+#Form {
+    background-color: #F7F7F7;
+    border:1px solid #EDEDED;
+    border-radius: 10px;
+
+    form {
+        padding:15px;
+        display: flex;
+        flex-direction: column;
+        .Form-row {
+            padding:7.5px;
+            display: flex;
+        }
+    }
+}
