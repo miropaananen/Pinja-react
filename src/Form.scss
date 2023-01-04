@@ -3,6 +3,27 @@
     background-color: #F7F7F7;
     border:1px solid #EDEDED;
     border-radius: 10px;
+    color:#7e7e7e;
+    font-weight: bold;
+
+    div label {
+        width: 100%;
+    }
+
+    .FormTop {
+        display: flex;
+        flex-direction: row;
+        .Form-row-name {
+            width: 40%;
+        }
+        .Form-row-description {
+            width: 60%;
+        }
+    }
+    button {
+        background-color: white;
+        border: 1px solid #7e7e7e;
+    }
 
     form {
         padding:15px;
@@ -13,8 +34,52 @@
             display: flex;
         }
     }
+
+    .Form-buttons-container {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+
+        button:first-child {
+            margin-right: 10px;
+        }
+    }
 }
 
 .Listview {
     margin-top: 45px;
+    .Header { 
+        background-color: #F7F7F7;
+        padding:1rem;
+    span {
+        font-weight: bold;
+    }
+    }
+
+    button {
+        background-color: white;
+        border: 1px solid #7e7e7e;
+    }
+    button:first-child {
+        margin-right: 10px;
+    }
+    .Item-container {
+        padding: 2rem 1rem;
+        border-bottom: 1px solid #7e7e7e;
+    }
+    .buttons-container {
+        display: flex;
+        margin-left: auto;
+    }
+    .Item-container, Header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    .item-field {
+        display: flex;
+        justify-content: flex-start;
+    }
 }

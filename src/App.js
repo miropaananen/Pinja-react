@@ -1,5 +1,4 @@
-import './App.css';
-import Form from './Form.js';
+//import Form from './Form.js';
 
 //Testing if the local storage works
 /*
@@ -17,7 +16,6 @@ function App() {
 
   return (
     <div className="App container">
-      <Form></Form>
     </div>
   );
 }

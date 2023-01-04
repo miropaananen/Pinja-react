@@ -4,6 +4,9 @@ $body-bg: white;
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
 
+// Bootstrap and its default variables
+@import "node_modules/bootstrap/scss/bootstrap";
+
 /*
 .App-header {
     background-color: red;
@@ -13,5 +16,11 @@ $body-bg: white;
 body {
     padding-top: 15px;
 }
+
+// change the theme
+$theme-colors: (
+  "primary": red,
+  "danger": #ff4136
+);
 
 @import 'Form.scss'
