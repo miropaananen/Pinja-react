@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect  } from "react";
 
 export default function Form() {
   const [data, setData] = useState([]);
@@ -7,6 +7,7 @@ export default function Form() {
   const formNameRef = useRef(null);
   const formDescriptionRef = useRef(null);
   const formCommentRef = useRef(null);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,9 +23,6 @@ export default function Form() {
       },
     ]);
 
-    // Save the data array to local storage
-    localStorage.setItem("data", JSON.stringify(data));
-
     // Clear the form
     e.target.name.value = "";
     e.target.description.value = "";
@@ -33,32 +31,31 @@ export default function Form() {
     //iterate id every time data is saved
     setId(id + 1);
 
-    console.log(e);
   };
+
+   // Save the data array to local storage
+    useEffect(() => {
+      localStorage.setItem('data', JSON.stringify(data));
+    }, [data]);
 
   const handleDelete = (id) => {
     // Remove the item with the specified ID from the data array
     setData(data.filter((item) => item.id !== id));
 
     // Remove the item from local storage
-    localStorage.removeItem(id);
+    localStorage.removeItem(String(id));
   };
 
   const handleDetails = (id) => {
-    console.log("Toimii");
-    console.log(id);
-    return <div>{id}</div>;
+    const item = data.find((item) => item.id === id);
+    setSelectedItem(item);
   };
 
   const handleClear = () => {
-    formNameRef.current.value = "";
-    formDescriptionRef.current.value = "";
-    formCommentRef.current.value = "";
+    formNameRef.current.value = '';
+    formDescriptionRef.current.value = '';
+    formCommentRef.current.value = '';
   };
-
-  //console.log(data);
-  console.log("foreach Javascrip objekti");
-  console.log(data);
 
   return (
     <div>
@@ -85,14 +82,20 @@ export default function Form() {
       </form>
 
       <div className="Listview">
-        {data.map((item) => (
-          <div key={item.id}>
-            {" "}
-            {item.name} {item.description}{" "}
-            <button onClick={() => handleDelete(item.id)}>Delete</button>{" "}
-            <button onClick={() => handleDetails(item.id)}>Details</button>{" "}
-          </div>
-        ))}
+      {data.map((item) => (
+        <div key={item.id}>
+          {item.name} {item.description}
+          <button onClick={() => handleDelete(item.id)}>Delete</button>
+          <button onClick={() => handleDetails(item.id)}>Details</button>
+        </div>
+      ))}
+      {selectedItem && (
+        <div>
+          <h2>{selectedItem.name}</h2>
+          <p>{selectedItem.description}</p>
+          <button onClick={() => setSelectedItem(null)}>Close</button>
+        </div>
+      )}
       </div>
     </div>
   );

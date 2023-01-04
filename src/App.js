@@ -15,10 +15,6 @@ console.log(data[0]);
 */
 function App() {
 
-  const data2 = JSON.parse(localStorage.getItem('data'));
-
-  console.log(data2);
-
   return (
     <div className="App container">
       <Form></Form>
