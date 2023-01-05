@@ -8,6 +8,14 @@ Install the application using:
 
 ### `npm install`
 
+then 
+
+### `npm start`
+
+After installatin you can run the app by using just only 
+
+### `npm start`
+
 ## Available Scripts
 
 In the project directory, you can run:
