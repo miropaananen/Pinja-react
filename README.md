@@ -8,11 +8,7 @@ Install the application using:
 
 ### `npm install`
 
-then 
-
-### `npm start`
-
-After install you can run the app by using 
+then after install you can run the app by using 
 
 ### `npm start`
 
