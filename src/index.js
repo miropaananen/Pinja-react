@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './custom.scss';
 import Form from './Form.js';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ root.render(
     <Form />
     </div>
   </React.StrictMode>
+
 );
 
 // If you want to start measuring performance in your app, pass a function

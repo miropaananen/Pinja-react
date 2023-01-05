@@ -1,22 +1,34 @@
-
 #Form {
     background-color: #F7F7F7;
     border:1px solid #EDEDED;
     border-radius: 10px;
     color:#7e7e7e;
     font-weight: bold;
+    padding:1rem;
 
     div label {
         width: 100%;
+        display: flex;
+        justify-content: center;
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right:1rem;
+        }
     }
 
     .FormTop {
+        margin-bottom:1rem;
         display: flex;
         flex-direction: row;
-        .Form-row-name {
+        .name-input {
             width: 40%;
+            label {
+                padding-right:2rem
+            }
         }
-        .Form-row-description {
+        .description-input {
             width: 60%;
         }
     }
@@ -48,6 +60,31 @@
     }
 }
 
+@include media-breakpoint-down(md) { 
+
+    #Form .FormTop {
+        flex-direction: column;
+        .name-input, .description-input {
+            width: 100%;
+        }
+        .name-input {
+            margin-bottom: 1rem; 
+        label {
+            padding-right: 0;
+        }
+    }
+    }
+    div label {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        span {
+           width: 100%;
+           max-width: 100px; 
+        }
+    }
+ }
+
 .Listview {
     margin-top: 45px;
     .Header { 
@@ -73,7 +110,7 @@
         display: flex;
         margin-left: auto;
     }
-    .Item-container, Header {
+    .Item-container, .Header {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     }

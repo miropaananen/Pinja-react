@@ -61,23 +61,23 @@ export default function Form() {
       <form id="Form" onSubmit={handleSubmit} ref={formRef}>
         <div>
           <div className="FormTop">
-          <div className="Form-row-name">
+          <div className="Form-row name-input">
             <label>
-              Name:
+              <span>Name:</span>
               <input className="form-control" type="text" name="name" ref={formNameRef} />
             </label>
           </div>
-          <div className="Form-row-description">
+          <div className="Form-row description-input">
             <label>
-              Description
+              <span>Description:</span>
               <input className="form-control" type="text" name="description" ref={formDescriptionRef} />
             </label>
           </div>
           </div>
           <div>
             <label>
-              Comment
-              <input type="text" name="comment" ref={formCommentRef} />
+              <span>Comment:</span>
+              <input className="form-control" type="text" name="comment" ref={formCommentRef} />
             </label>
           </div>
         </div>

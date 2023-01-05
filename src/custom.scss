@@ -1,11 +1,7 @@
-// Override default variables before the import
-$body-bg: white;
-
-// Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
 
-// Bootstrap and its default variables
-@import "node_modules/bootstrap/scss/bootstrap";
+// Override default variables before the import
+$body-bg: white;
 
 /*
 .App-header {
@@ -17,10 +13,11 @@ body {
     padding-top: 15px;
 }
 
+
 // change the theme
 $theme-colors: (
   "primary": red,
   "danger": #ff4136
 );
 
-@import 'Form.scss'
+@import 'Form.scss';
