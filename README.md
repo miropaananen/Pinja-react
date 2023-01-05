@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+![image](https://user-images.githubusercontent.com/47216899/210858553-21191278-e4f6-4d7f-9768-950df8c4c7b9.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple Form made with react that stores information to localstorage
 
 ## First time runing this app? 
 
@@ -12,7 +12,7 @@ then
 
 ### `npm start`
 
-After installatin you can run the app by using just only 
+After install you can run the app by using 
 
 ### `npm start`
 
