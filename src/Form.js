@@ -107,10 +107,16 @@ export default function Form() {
           </div>
         ))}
         {selectedItem && (
-          <div>
-            <h2>{selectedItem.name}</h2>
-            <p>{selectedItem.description}</p>
-            <button onClick={() => setSelectedItem(null)}>Close</button>
+          <div className="Mega-menu">
+            <div className="container">
+              <div>
+              <h2>Details</h2>
+              <p>Name: {selectedItem.name}</p>
+              <p>Description: {selectedItem.description}</p>
+              <p>Comment: {selectedItem.comment}</p>
+              <button className="btn" onClick={() => setSelectedItem(null)}>Close</button>
+              </div>
+            </div>
           </div>
         )}
       </div>
